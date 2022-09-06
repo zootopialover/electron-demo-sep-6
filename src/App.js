@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useState } from 'react';
 import './App.css';
-import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
     });
   });
 
-  const reportChange = useCallback((state, handle) => {
+  const handleChange = useCallback((state, handle) => {
     if (handle === screen1) {
       setIsFullScreen(state)
     }
@@ -33,8 +33,8 @@ function App() {
           Enter fullscreen
         </button>
 
-        <FullScreen handle={screen1} onChange={reportChange}>
-          {isFullScreen ? <p> Entered Full Screen </p> : <p> Not in Full Screen </p>}
+        <FullScreen handle={screen1} onChange={handleChange}>
+          {isFullScreen ? 'Entered Full Screen' : 'Not in Full Screen'}
         </FullScreen>
       </div>
     </div>
